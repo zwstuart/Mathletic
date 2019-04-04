@@ -105,3 +105,24 @@ for(j in 1:N){
   I[j] <- which(data$Name[j] == kickers)
 }
 
+#EXPECTED POINTS AS A FUNCTION OF d
+#Where d is distance from opponents goal line
+#and missing a x yard kick implies d = 110-x
+ep <- function(d, down=1){
+  if(min(d) < 1 || max(d) > 99){
+    stop('distance out of range')
+  }
+  nn <- length(d)
+  res <- rep(NA, nn)
+  phi_d <- phi[[down]][,1]
+  phi_e <- phi[[down]][,2]
+  for(i in 1:nn){
+    k <- min(which(phi_d > d[i]))
+    res[i] <- phi_e[k-1] + (d[i]%%1)*(phi_e[k]-phi_e[k-1])
+  }
+  return(res)
+}
+
+ep_linear <- function(d){
+  1
+}

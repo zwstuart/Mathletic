@@ -24,7 +24,7 @@ model {
   beta0 ~ normal(0, 100);
   sigma_a ~ cauchy(0, .1);
   sigma_b ~ cauchy(0, .1);
-  sigma_t ~ cauchy(0, .015);
+  sigma_t ~ normal(0, .025);
   
   for (j in 1:numJ) {
     theta[j] ~ normal(1, sigma_t);

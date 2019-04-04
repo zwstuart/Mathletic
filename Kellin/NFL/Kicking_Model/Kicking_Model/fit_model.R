@@ -6,5 +6,5 @@ fit <- stan(file='model1.stan',
             verbose = TRUE, init="0", cores=2) 
 
 e <- extract(fit, permuted=TRUE)
-
+#save(fit, file='stan_out1.rda')
 
