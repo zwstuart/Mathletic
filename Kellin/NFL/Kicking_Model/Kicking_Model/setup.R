@@ -124,5 +124,5 @@ ep <- function(d, down=1){
 }
 
 ep_linear <- function(d){
-  1
+  return(6 - 2*d/25)
 }

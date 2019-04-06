@@ -27,7 +27,7 @@ model {
   sigma_t ~ cauchy(0, .015);
   
   for (j in 1:numJ) {
-    theta[j] ~ student_t(3, 1, sigma_t);
+    theta[j] ~ normal(1, sigma_t);
   }
   
   for (i in 1:numI) {

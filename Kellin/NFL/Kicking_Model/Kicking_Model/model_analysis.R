@@ -16,7 +16,7 @@ for(i in 1:numI){
 kickers[order(fulcrum)]
 
 #Plot probability vs distance for Justin Tucker
-name_list <- c('Justin Tucker', 'Adam Vinatieri', 'Zane Gonzalez', 'Wes Welker')
+name_list <- c('Justin Tucker', 'Adam Vinatieri', 'Roberto Aguayo', 'Wes Welker')
 par(mfrow=c(2,2))
 for(name in name_list){
   ind <- which(kickers == name)
@@ -81,7 +81,6 @@ hist(bplb, main='Breakpoint LB (regression)')
 
 
 #Plot expected points added vs distance for different kickers
-name_list <- c('Justin Tucker', 'Adam Vinatieri', 'Zane Gonzalez', 'Wes Welker')
 par(mfrow=c(2,2))
 for(name in name_list){
   ind <- which(kickers == name)
